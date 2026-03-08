@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bean Boutique Coffee Shop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <div class="logo">
+      <h1>Bean Boutique</h1>
+      <p>Coffee Shop</p>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="coffee.html">Coffee Selection</a></li>
+        <li><a href="equipment.html">Brewing Equipments</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="offers.html">Special Offers</a></li>
+        <li><a href="cart.html">
+          <img src="images/d5.png" alt="Shopping cart" class="cart-icon">
+        </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- hero section/slideshow -->
+  <section class="hero">
+    <img src="images/morning-coffee.png" alt="Freshly brewed coffee">
+      <div class="hero-text">
+        <h2>Welcome to</h2>
+        <h2 class="bean">Bean Boutique</h2>
+        <p>Your neighbourhood coffee experience</p>
+      </div>
+  </section>
+
+  <!-- Modal Popup(Discount signup) -->
+   <div class="modal" id="discountModal">
+    <div class="modal-content">
+      <span class="close-btn">&times;</span>
+      <h3>Special Offer</h3>
+      <p>Enjoy 10% OFF your first order at Bean Boutique.</p>
+    </div>
+   </div>
+
+   <!-- ==== Main Content Sections ==== -->
+    <main>
+
+      <!-- Coffee Blends -->
+       <section class="features">
+        <img src="images/close-up.png" alt="Coffee Blends">
+        <h3>Our Coffee Blends</h3>
+        <p>Explore our unique blends and single-origin coffees.</p>
+        <a href="coffee.html">View Coffee Selection</a>
+       </section>
+
+       <!-- Brewing Equipment -->
+        <section class="features">
+          <img src="images/artisan-coffee.png" alt="Brewing Equipment">
+          <h3>Brewing Equipment</h3>
+          <p>High-quality equipment for every brewing style.</p>
+          <a href="equipment.html">View Equipment</a>
+        </section>
+
+        <!-- Events & Workshops -->
+         <section class="features">
+          <img src="images/coffee-break.png" alt="Coffee workshop">
+          <h3>Events & Workshops</h3>
+          <p>Join our coffee tastings and brewing workshops.</p>
+          <a href="events.html">View Events</a>
+         </section>
+
+         <!-- Special Offers -->
+          <section class="offers">
+            <h3>Special Offers & Subscriptions</h3>
+            <p>Enjoy exclusive promotions and monthly coffee deliveries.</p>
+            <a href="offers.html">View Offers</a>
+          </section>
+    </main>
+
+    <!-- ==== Footer ==== -->
+     <footer>
+      <section class="footer-section">
+        <h4>Follow Us</h4>
+        <p>Facebook | Instagram | Twitter </p>
+      </section>
+
+      <section class="footer-section">
+        <h4>Visit Us</h4>
+        <p>Henderson Street, Blantyre</p>
+      </section>
+
+      <section class="footer-section">
+        <h4>Opening Hours</h4>
+        <p>Mon - Fri: 7am - 6pm</p>
+        <p>Sat - Sun: 8am - £pm</p>
+      </section>
+
+      <p class="copyright">@ 2026 Bean Boutique Coffee Shop</p>
+     </footer>
+
+     <script>
+      document.addEventListener("DOMContentLoaded", function() {
+
+        const modal = document.getElementById("discountModal");
+        const closeBtn = document.querySelector(".close-btn");
+
+        // After three seconds, show modal ONLY if it has never been shown before
+        if (!
+          sessionStorage.getItem("modalShown")) {
+            setTimeout(function() {
+              modal.style.display = "flex";
+            }, 3000);
+          }
+
+        // Close modal and remember the user has seen it
+        function closeModal() {
+          modal.style.display = "none";
+          sessionStorage.setItem("modalShown", "true");
+        }
+        closeBtn.addEventListener("click", closeModal);
+
+        modal.addEventListener("click", function(e){
+          if (e.target === modal) {
+            closeModal();
+          }
+        });
+
+      });
+     </script>
+</body>
+</html>

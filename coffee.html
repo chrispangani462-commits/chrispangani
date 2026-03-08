@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Coffee Selection</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Lightbox Plugin CSS -->
+   <link href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/css/lightbox.min.css" rel="stylesheet">
+
+   <!-- Ligtbox Plugin JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.4/js/lightbox.min.js"></script>
+</head>
+<body>
+
+  <!-- ==== Header (The same nav reused) -->
+  <header>
+    <div class="logo">
+      <h1>Bean Boutique</h1>
+      <p>Coffee Shop</p>
+    </div>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="coffee.html">Coffee Selection</a></li>
+        <li><a href="equipment.html">Brewing Equipments</a></li>
+        <li><a href="events.html">Events</a></li>
+        <li><a href="offers.html">Special Offers</a></li>
+        <li><a href="cart.html">
+          <img src="images/d5.png" alt="Shopping cart" class="cart-icon">
+        </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- === Page title === -->
+   <section class="page-title">
+    <h2>Our Coffee Selection</h2>
+    <p>Explore our carefully selected blends and single-origin coffees</p>
+   </section>
+
+   <!-- === Search Bar (Plugin later) === -->
+    <div class="search-section">
+      <input type="text" id="coffeesearch" placeholder="Search for Coffee...">
+    </div>
+
+    <!-- === Coffee Catalogue === -->
+     <main class="coffee-grid">
+
+      <!-- Coffee Card 1 -->
+       <div class="coffee-card">
+        <a href="images/serenity-coffee.png" data-lightbox="coffee">
+        <img src="images/serenity-coffee.png" alt="Malawian Yirgacheffe Coffee"></a>
+        <h3>Malawian Yirgacheffe</h3>
+        <p><strong>Tasting Notes:</strong> Citrus, Jasmine</p>
+        <p><strong>Brew Method:</strong> Pour Over</p>
+        <button onclick="addToCart('Malawian Yirgacheffe', 4500, 'images/serenity-coffee.png')">Add to Cart</button>
+       </div>
+
+       <!-- Coffee Card 2 -->
+       <div class="coffee-card">
+        <a href="images/metallic-coffee.png" data-lightbox="coffee">
+        <img src="images/metallic-coffee.png" alt="Colombian Supremo coffee"></a>
+        <h3>Colombian Supremo</h3>
+        <p><strong>Tasting Notes:</strong> Caramel, Nutty</p>
+        <p><strong>Brew Method:</strong> Drip Coffee</p>
+        <button onclick="addToCart('Colombian Supremo', 5000)">Add to Cart</button>
+       </div>
+
+       <!-- Coffee Card 3 -->
+       <div class="coffee-card">
+        <a href="images/coffee-cup.png" data-lightbox="coffee">
+        <img src="images/coffee-cup.png" alt="Ethiopian Madheling coffee"></a>
+        <h3>Ethiopian Madheling</h3>
+        <p><strong>Tasting Notes:</strong> Dark Chocolate, Spice</p>
+        <p><strong>Brew Method:</strong> French Press</p>
+        <button onclick="addToCart('Ethiopian Madheling', 4000)">Add to Cart</button>
+       </div>
+
+       <!-- Coffee Card 4 -->
+       <div class="coffee-card">
+        <a href="images/cozy-coffee.png" data-lightbox="coffee">
+        <img src="images/cozy-coffee.png" alt="Guetamalan Antigua coffee"></a>
+        <h3>Guetamalan Antigua</h3>
+        <p><strong>Tasting Notes:</strong> Cocoa, Hazelnut</p>
+        <p><strong>Brew Method:</strong> Espresso</p>
+        <button onclick="addToCart('Guetamalan Antigua', 5000)">Add to Cart</button>
+       </div>
+
+       <!-- Coffee Card 5 -->
+       <div class="coffee-card">
+        <a href="images/coffee-hera.jfif" data-lightbox="coffee">
+        <img src="images/coffee-hera.jfif" alt="Costa Rica Tarrazu coffee"></a>
+        <h3>Costa Rica Tazzaru</h3>
+        <p><strong>Tasting Notes:</strong> Citrus, Honey</p>
+        <p><strong>Brew Method:</strong> Aeropresso</p>
+        <button onclick="addToCart('Costa Rica Tazzaru', 4500)">Add to Cart</button>
+       </div>
+
+       <!-- Coffee Card 6 -->
+       <div class="coffee-card">
+        <a href="images/coffee-hero.jfif" data-lightbox="coffee">
+        <img src="images/coffee-hero.jfif" alt="Decaf house blend coffee"></a>
+        <h3>Deaf House Blend</h3>
+        <p><strong>Tasting Notes:</strong> Chocolate, Nutty</p>
+        <p><strong>Brew Method:</strong> Drip Coffee</p>
+        <button onclick="addToCart('Deaf House Blend', 4000)">Add to Cart</button>
+       </div>
+     </main>
+
+     <footer>
+      <p>@ 2026 Bean Boutique Coffee Shop</p>
+     </footer>
+
+     <script>
+      function addToCart(name, price, image) {
+        let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+        cart.push({
+          name: name,
+          price: price,
+          image: image
+        });
+
+        localStorage.setItem("cart", JSON.stringify(cart));
+
+        alert(name + " added to cart!");
+      }
+     </script>
+  
+</body>
+</html>
