@@ -1,0 +1,357 @@
+/* ==== Reset & Base Styles ==== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: #f5f1ec;
+  color: #3b2f2f;
+  line-height: 1.6;
+}
+
+/* ==== Header & Navigation ==== */
+header {
+  background-color: #3b2f2f;
+  color: #fff;
+  padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo h1 {
+  font-size: 26px;
+}
+
+.logo p {
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+}
+
+nav ul li {
+  margin-left: 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  transition: background 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: #6f4e37;
+  border-radius: 5px;
+}
+
+.cart-icon {
+  width: 28px;
+  height: 28px;
+  vertical-align: middle;
+}
+
+.cart {
+  text-align: center;
+  padding: 40px;
+}
+
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 10px;
+}
+
+.cart-img {
+  width: 60px;
+  height: auto;
+  border-radius: 5px;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #6f4e37;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+nav ul li a:hover .cart-icon {
+  opacity: 0.7;
+}
+/* ==== Hero section ==== */
+.hero {
+  position: relative;
+}
+
+.hero img {
+  width: 100%;
+  height: 70vh;
+  object-fit: cover;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  padding: 25px;
+  text-align: center;
+  border-radius: 10px;
+}
+
+.hero-text h2 {
+  font-size: 70px;
+  margin-bottom: 10px;
+}
+
+.bean{
+    color: orange;
+}
+
+/* ==== Modal popup ==== */
+.modal {
+  display: none;    /*hidden by default */
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: #fff;
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 8px;
+  position: relative;
+  text-align: center;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+/* ==== Main Sections ==== */
+main {
+  padding: 40px 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px 1fr));
+  gap: 30px;
+}
+
+.features {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.features:hover {
+  transform: translateY(-5px);
+}
+
+.features img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.features h3 {
+  margin: 15px 0;
+}
+
+.features a {
+  display: inline-block;
+  margin-top: 10px;
+  text-decoration: none;
+  color: #fff;
+  background-color: #6f4e37;
+  padding: 8px 15px;
+  border-radius: 5px;
+}
+
+.features a:hover {
+  background-color: #3b2f2f;
+}
+
+/* === Offers Section === */
+.offers {
+  grid-column: 1 / -1;
+  background-color: #e6d3b1;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+}
+
+/* === Footer === */
+footer {
+  background-color: #3b2f2f;
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+}
+
+.footer-section {
+  margin-bottom: 15px;
+}
+
+footer p {
+  font-size: 14px;
+} 
+
+/* ==== Coffee Selection Page ==== */
+.page-title {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.page-title h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.page-title p{
+  color: #555;
+}
+
+/* Search bar */
+.search-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.search-section input {
+  width: 60%;
+  max-width: 400px;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 1rem;
+}
+
+/* Coffee Card */
+.coffee-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 0 40px 60px;
+}
+
+/* Coffee Card */
+.coffee-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.coffee-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.coffee-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+
+.coffee-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.coffee-card p {
+  font-size: 0.95rem;
+  margin: 5px 0;
+}
+
+/* Button */
+.coffee-card button {
+  margin-top: 15px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  background-color: #6f4e37;
+  color: #fff;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.coffee-card button:hover {
+  background-color: #56392d;
+}
+
+
+/* ==== Responsive Design ==== */
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  nav ul {
+    flex-direction: column;
+    margin-top: 15px;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  .hero img {
+    height: 50vh;
+  }
+
+  .hero-text {
+    width: 90%;
+    padding: 0 10px;
+  }
+
+  .hero-text h2 {
+    font-size: 2.2rem;
+    line-height: 1.2;
+  } 
+
+  .hero-text p {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+
+  .search-section input {
+    width: 80%;
+  }
+
+  .coffee-grid {
+    padding: 0 20px 40px;
+  }
+}
